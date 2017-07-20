@@ -34,6 +34,15 @@ main{
     background-color: #5CACE2;
     position: relative;
     border-radius: 100%;
+    &::after{
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 5px;
+      height: 10px;
+      background-color: #C1382A;
+      z-index: 2;
+    }
     .chrono{
       top: 20%;
       left: -85px;
@@ -42,9 +51,10 @@ main{
       position: absolute;
       z-index: 4;
       color: black;
+      z-index: 5;
     }
     .pik{
-      transform: rotate(0deg);
+      transform: rotate(20deg);
       transform-origin: 5px 100px;
       left: 90px;
       top: -5px;
@@ -53,6 +63,7 @@ main{
       margin: auto;
       position: absolute;
       background-color: #D35400;
+      z-index: 3;
     }
     .surface{
       top: 0;
@@ -61,6 +72,7 @@ main{
       width: 100%;
       height: 100%;
       background-color: #5CACE2;
+      z-index: 4;
     }
   }
 }
