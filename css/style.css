@@ -1,3 +1,33 @@
-
+.timerPlace {
+  width: 100%;
+  border-color: lightblue;
+}
+.timerPlace .bgTimer {
+  width: 400px;
+  height: 400px;
+  background-color: #5CACE2;
+  position: relative;
+  border: 10px solid #5CACE2;
+  border-radius: 100%;
+}
+.timerPlace .bgTimer .pik {
+  transform: rotate(30deg);
+  transform-origin: 10px 200px;
+  left: 180px;
+  top: -10px;
+  margin: auto;
+  position: absolute;
+  height: 50%;
+  width: 20px;
+  background-color: #34495E;
+}
+.timerPlace .bgTimer .surface {
+  top: 0;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #5CACE2;
+}
 
 /*# sourceMappingURL=style.css.map */
