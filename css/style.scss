@@ -5,6 +5,7 @@ body,html{
 main{
   font-family: 'Pacifico', cursive;
   .BS{
+
     h3{
     }
   }
@@ -15,6 +16,7 @@ main{
     justify-content: center;
     align-items: baseline;
     input{
+      z-index: 3;
       margin: 5px;
       background-color: #D35400;
       border-radius: 5px;
@@ -59,7 +61,7 @@ main{
       font-family: 'Michroma', sans-serif;
     }
     .pik{
-      transform: rotate(20deg);
+      transform: rotate(180deg);
       transform-origin: 5px 100px;
       left: 90px;
       top: -5px;

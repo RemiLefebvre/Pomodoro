@@ -14,6 +14,7 @@ main .selectB, main .selectS {
   align-items: baseline;
 }
 main .selectB input, main .selectS input {
+  z-index: 3;
   margin: 5px;
   background-color: #D35400;
   border-radius: 5px;
@@ -58,7 +59,7 @@ main .selectB .choice, main .selectS .choice {
   font-family: 'Michroma', sans-serif;
 }
 .timerPlace .bgTimer .pik {
-  transform: rotate(20deg);
+  transform: rotate(180deg);
   transform-origin: 5px 100px;
   left: 90px;
   top: -5px;
