@@ -72,8 +72,8 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-      var chronoB =$(".choice:first").val();
-      var chronoS =$(".choice:last").val();
+      var chronoB = $(".choice:first").val();
+      var chronoS = $(".choice:last").val();
       $(".chronoS").text("00:" + chronoS);
 
 
@@ -100,12 +100,14 @@
 
       // CHANGE VALUE INPUT && VAR B/S && .CHONO B/S
       $(".button").click(function() {
-        chronoTurn == false ? $(this).siblings(".choice").val(Math.abs(eval($(this).siblings(".choice").val() + $(this).val() + 1))) : console.log("Stop the chrono");
-        $(this).siblings(".choice").val() == 0 ? $("this").siblings(".choice").val(1) : console.log("0 forbiden");
-        chronoB = $(".choice:first").val();
-        $(".chronoB").text("00:" + chronoB);
-        chronoS = $(".choice:last").val();
-        $(".chronoS").text("00:" + chronoS);
+        if (chronoTurn == false) {
+          chronoTurn == false ? $(this).siblings(".choice").val(Math.abs(eval($(this).siblings(".choice").val() + $(this).val() + 1))) : console.log("Stop the chrono");
+          $(this).siblings(".choice").val() == 0 ? $(this).siblings(".choice").val(1) : console.log(":)");;
+          chronoB = $(".choice:first").val();
+          $(".chronoB").text("00:" + chronoB);
+          chronoS = $(".choice:last").val();
+          $(".chronoS").text("00:" + chronoS);
+        }
       });
 
 
@@ -114,27 +116,27 @@
       $(".surface").click(function() {
         // si il tourne pas
         if (chronoTurn == false) {
-          chronoTurn=true;
+          chronoTurn = true;
           // toute les 1 seconde
           intervalChronoTurn = setInterval(function() {
             // si un des deux est à 0
-            if (chronoB==0 || chronoS==0) {
+            if (chronoB == 0 || chronoS == 0) {
               switchChrono();
               // remonte les 2 au .choice
               chronoS = $(".choice:last").val();
               chronoB = $(".choice:first").val();
-              $(".chronoS").text("00:"+chronoS);
-              $(".chronoB").text("00:"+chronoB);
+              $(".chronoS").text("00:" + chronoS);
+              $(".chronoB").text("00:" + chronoB);
             }
             // si show session
             else if (session == true) {
               chronoS--;
-              $(".chronoS").text("00:"+chronoS);
+              $(".chronoS").text("00:" + chronoS);
             }
             // si show break
-             else {
+            else {
               chronoB--;
-              $(".chronoB").text("00:"+chronoB);
+              $(".chronoB").text("00:" + chronoB);
             }
           }, 1000);
         }
@@ -142,7 +144,7 @@
         // si il tourne
         else {
           clearInterval(intervalChronoTurn);
-          chronoTurn=false;
+          chronoTurn = false;
         }
       });
     });
