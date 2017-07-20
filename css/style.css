@@ -30,6 +30,7 @@ main .selectB .choice, main .selectS .choice {
   display: flex;
 }
 .timerPlace .bgTimer {
+  cursor: pointer;
   margin: 40px auto;
   width: 200px;
   height: 200px;

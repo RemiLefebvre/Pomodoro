@@ -83,14 +83,14 @@
 
       function switchChrono() {
         if (session == true) {
+          session = false;
           $(".chronoS").hide();
           $(".chronoB").show();
           $(".bgTimer").css("box-shadow", "-85px -20px 40px 10px #0E2A36")
-          session = false;
         } else {
+          session = true;
           $(".chronoB").hide();
           $(".chronoS").show();
-          session = true;
           $(".bgTimer").css("box-shadow", "85px -20px 40px 10px #0E2A36")
         }
       }
@@ -114,39 +114,42 @@
       var chronoTurn = false;
       var intervalChronoTurn;
       $(".surface").click(function() {
-        // si il tourne pas
         if (chronoTurn == false) {
           chronoTurn = true;
-          // toute les 1 seconde
           intervalChronoTurn = setInterval(function() {
-            // si un des deux est à 0
             if (chronoB == 0 || chronoS == 0) {
               switchChrono();
-              // remonte les 2 au .choice
               chronoS = $(".choice:last").val();
               chronoB = $(".choice:first").val();
               $(".chronoS").text("00:" + chronoS);
               $(".chronoB").text("00:" + chronoB);
-            }
-            // si show session
-            else if (session == true) {
+            } else if (session == true) {
               chronoS--;
               $(".chronoS").text("00:" + chronoS);
-            }
-            // si show break
-            else {
+            } else {
               chronoB--;
               $(".chronoB").text("00:" + chronoB);
             }
           }, 1000);
-        }
-
-        // si il tourne
-        else {
+        } else {
           clearInterval(intervalChronoTurn);
           chronoTurn = false;
         }
       });
+
+      var deg = 0;
+      $(".surface").click(function() {
+        //   console.log(pik);
+          var interPik = setInterval(function() {
+            if (deg != 362) {
+                $('.pik').css('transform','rotate(' + deg + 'deg)');
+              deg+=0.5;
+            } else {
+              clearInterval(interPik)
+            }
+          }, 10);
+      });
+
     });
   </script>
 
