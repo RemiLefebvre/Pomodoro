@@ -43,14 +43,15 @@ main .selectB input, main .selectS input {
   z-index: 2;
 }
 .timerPlace .bgTimer .chrono {
-  top: 20%;
-  left: -85px;
+  top: 25%;
+  left: -95px;
   margin-left: 50%;
-  font-size: 64px;
+  font-size: 44px;
   position: absolute;
   z-index: 4;
   color: black;
   z-index: 5;
+  font-family: 'Michroma', sans-serif;
 }
 .timerPlace .bgTimer .pik {
   transform: rotate(20deg);
