@@ -19,6 +19,10 @@ main .selectB input, main .selectS input {
   border-radius: 5px;
   border: 0 solid #000;
 }
+main .selectB .choice, main .selectS .choice {
+  text-align: center;
+  width: 40px;
+}
 
 .timerPlace {
   width: 100%;
