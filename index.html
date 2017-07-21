@@ -84,11 +84,13 @@
       function switchChrono() {
         if (session == true) {
           session = false;
+          pik(chronoB);
           $(".chronoS").hide();
           $(".chronoB").show();
           $(".bgTimer").css("box-shadow", "-85px -20px 40px 10px #0E2A36")
         } else {
           session = true;
+          pik(chronoS);
           $(".chronoB").hide();
           $(".chronoS").show();
           $(".bgTimer").css("box-shadow", "85px -20px 40px 10px #0E2A36")
@@ -113,9 +115,15 @@
 
       var chronoTurn = false;
       var intervalChronoTurn;
-      $(".surface").click(function() {
+      $(".surface").click(function(){
+        startStop()
+      });
+
+      function startStop() {
+        clearInterval(interPik)
         if (chronoTurn == false) {
           chronoTurn = true;
+          session == true ? pik(chronoS) : pik(chronoB);
           intervalChronoTurn = setInterval(function() {
             if (chronoB == 0 || chronoS == 0) {
               switchChrono();
@@ -135,20 +143,28 @@
           clearInterval(intervalChronoTurn);
           chronoTurn = false;
         }
-      });
+      }
+      startStop();
+
 
       var deg = 0;
-      $(".surface").click(function() {
+      var interPik;
+      // var t=0;
+      function pik(t) {
         //   console.log(pik);
-          var interPik = setInterval(function() {
-            if (deg != 362) {
-                $('.pik').css('transform','rotate(' + deg + 'deg)');
-              deg+=0.5;
-            } else {
-              clearInterval(interPik)
-            }
-          }, 10);
-      });
+        // $('.pik').css('transform', 'rotate(' + 0 + 'deg)');
+        deg=0;
+
+        interPik = setInterval(function() {
+          if (deg <= 362) {
+            $('.pik').css('transform', 'rotate(' + deg + 'deg)');
+            deg += (3.6 / t);
+          } else {
+            clearInterval(interPik)
+            deg = 0;
+          }
+        }, 10);
+      };
 
     });
   </script>
